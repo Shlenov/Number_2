@@ -2,7 +2,6 @@ import sys
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
  
-
 if len(sys.argv) < 2:
     Width = 8
     Heiht = 5
@@ -15,8 +14,6 @@ else:
     
 a = [Width,Heiht]
 
-
-
 tree = ET.parse('results/results.xml')
 root = tree.getroot()
 x = []
@@ -28,9 +25,6 @@ for i in range(len(root)):
         if i == 1:
             y.append(float(root[i][j].text))
             
-print(x)
-print(y)
- 
 plt.rcParams ['figure.figsize'] = a
 plt.plot(x, y)
 plt.title("График функции y = 100 * sqrt(abs(A-0.01*x*x))+0.01*abs(x+10)")
